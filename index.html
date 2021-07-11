@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bedtime Story</title>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+
+  <div id="primary-slider" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <img src="img/001.jpg">
+        </li>
+        <li class="splide__slide">
+          <img src="img/002.jpg">
+        </li>
+        <li class="splide__slide">
+          <img src="img/003.jpg">
+        </li>
+        <li class="splide__slide">
+          <img src="img/004.jpg">
+        </li>
+        <li class="splide__slide">
+          <img src="img/005.jpg">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="secondary-slider" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <img src="img/001t.jpg">
+        </li>
+        <li class="splide__slide">
+          <img src="img/002t.jpg">
+        </li>
+        <li class="splide__slide">
+          <img src="img/003t.jpg">
+        </li>
+        <li class="splide__slide">
+          <img src="img/004t.jpg">
+        </li>
+        <li class="splide__slide">
+          <img src="img/005t.jpg">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var secondarySlider = new Splide('#secondary-slider', {
+      fixedWidth: 100,
+      height: 60,
+      gap: 10,
+      cover: true,
+      isNavigation: true,
+      focus: 'center',
+      breakpoints: {
+        '600': {
+          fixedWidth: 66,
+          height: 40,
+        }
+      },
+    }).mount();
+    var primarySlider = new Splide('#primary-slider', {
+      type: 'fade',
+      heightRatio: 0.5,
+      pagination: false,
+      arrows: false,
+      cover: true,
+    });
+
+    primarySlider.sync(secondarySlider).mount();
+
+  });
+</script>
+
+
+</html>
