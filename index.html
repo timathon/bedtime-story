@@ -8,10 +8,12 @@
   <title>Bedtime Story</title>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+  <button id="btnFS">全屏</button>
 
   <div id="primary-slider" class="splide">
     <div class="splide__track">
@@ -69,6 +71,7 @@
       cover: true,
       isNavigation: true,
       focus: 'center',
+      pagination: false,
       breakpoints: {
         '600': {
           fixedWidth: 66,
@@ -85,6 +88,19 @@
     });
 
     primarySlider.sync(secondarySlider).mount();
+
+    var doc = document.documentElement;
+
+
+
+    btnFS = document.getElementById('btnFS');
+    btnFS.onclick = () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen()
+      } else {
+        doc.requestFullscreen()
+      }
+    }
 
   });
 </script>

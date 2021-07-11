@@ -1,4 +1,9 @@
-.splide__slide img {
+/* .splide__slide img {
 	width : 100%;
 	height: auto;
+} */
+
+#btnFS {
+  position: absolute;
+  z-index: 1000;
 }
